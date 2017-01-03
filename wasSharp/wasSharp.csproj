@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A971E1C9-776C-4CD2-88AC-71197C7B955E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>wasSharp</RootNamespace>
+    <AssemblyName>wasSharp</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Arrays.cs" />
+    <Compile Include="BitTwiddling.cs" />
+    <Compile Include="Collections\Generic\CircularQueue.cs" />
+    <Compile Include="Collections\Specialized\ExtendedObservableCollection.cs" />
+    <Compile Include="Collections\Specialized\MultiKeyDictionary.cs" />
+    <Compile Include="Collections\Specialized\ObservableDictionary.cs" />
+    <Compile Include="Collections\Utilities\CollectionExtensions.cs" />
+    <Compile Include="Collections\Specialized\ObservableHashSet.cs" />
+    <Compile Include="Collections\Generic\RangeCollection.cs" />
+    <Compile Include="Collections\Generic\SerializableDictionary.cs" />
+    <Compile Include="Collections\Generic\SerializableSortedDictionary.cs" />
+    <Compile Include="Cryptography.cs" />
+    <Compile Include="CSV.cs" />
+    <Compile Include="Geo\Constants.cs" />
+    <Compile Include="Geo\Distance.cs" />
+    <Compile Include="Geo\GeodesicExtensions.cs" />
+    <Compile Include="Geo\GeographicCoordinate.cs" />
+    <Compile Include="NetHash.cs" />
+    <Compile Include="IO.cs" />
+    <Compile Include="KeyValue.cs" />
+    <Compile Include="Linq.cs" />
+    <Compile Include="Numerics.cs" />
+    <Compile Include="Reflection.cs" />
+    <Compile Include="Strings.cs" />
+    <Compile Include="Timers\DecayingAlarm.cs" />
+    <Compile Include="Timers\Utilities\TimeExtensions.cs" />
+    <Compile Include="Timers\TimedThrottle.cs" />
+    <Compile Include="Timers\Timer.cs" />
+    <Compile Include="wasSharp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\QValueParsing.cs" />
+    <Compile Include="Web\Utilities\WebExtensions.cs" />
+    <Compile Include="Web\wasHTTPClient.cs" />
+    <Compile Include="XML.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

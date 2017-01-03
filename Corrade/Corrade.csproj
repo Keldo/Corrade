@@ -1,0 +1,2062 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DBF5CAB0-CCF6-4D8F-A257-100CE4CA4F32}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Corrade</RootNamespace>
+    <AssemblyName>Corrade</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>Corrade.Corrade</StartupObject>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>false</GenerateManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>Corrade.ico</ApplicationIcon>
+    <ApplicationManifest>Corrade.exe.manifest</ApplicationManifest>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>7.14.3.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BayesSharp, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BayesSharp.0.1.1.0\lib\net40\BayesSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CommandLine, Version=1.9.71.2, Culture=neutral, PublicKeyToken=de6f01bd326f8c32, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommandLineParser.1.9.71\lib\net45\CommandLine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facebook.7.0.6\lib\net45\Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hammock.ClientProfile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
+      <HintPath>..\packages\TweetSharp.2.3.1\lib\4.0\Hammock.ClientProfile.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Jint, Version=2.9.1.0, Culture=neutral, PublicKeyToken=2e92ba9c8d81157f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Jint.2.9.1\lib\portable-net40+sl50+win+WindowsPhoneApp81+wp80\Jint.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LanguageDetection, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LanguageDetection.1.2.0\lib\net45\LanguageDetection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Magick.NET-Q16-HDRI-AnyCPU, Version=7.0.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\Magick.NET-Q16-HDRI-AnyCPU.7.0.3.902\lib\net40-client\Magick.NET-Q16-HDRI-AnyCPU.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mono.Data.Sqlite, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Data.Sqlite.Portable.1.0.3.5\lib\net4\Mono.Data.Sqlite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NAudio, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.7.3\lib\net35\NAudio.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NAudio.Vorbis, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Vorbis.1.0.0.0\lib\net35\NAudio.Vorbis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NVorbis, Version=0.8.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NVorbis.0.8.5.0\lib\NVorbis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenMetaverse">
+      <HintPath>..\libopenmetaverse\bin\OpenMetaverse.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenMetaverse.Rendering.Meshmerizer">
+      <HintPath>..\libopenmetaverse\bin\OpenMetaverse.Rendering.Meshmerizer.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenMetaverse.StructuredData">
+      <HintPath>..\libopenmetaverse\bin\OpenMetaverse.StructuredData.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenMetaverseTypes">
+      <HintPath>..\libopenmetaverse\bin\OpenMetaverseTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartThreadPool, Version=2.2.4.0, Culture=neutral, PublicKeyToken=1126fe8b671e8a79, processorArchitecture=MSIL">
+      <HintPath>..\packages\SmartThreadPool.dll.2.2.4\lib\net45\SmartThreadPool.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syn.Bot, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syn.Bot.1.2.6\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Syn.Bot.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syn.Log, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syn.Log.1.0.4\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Syn.Log.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syn.VA, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syn.VA.1.0.6\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Syn.VA.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration.Install">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Portable, Version=4.0.0.0, Culture=neutral, PublicKeyToken=59e704a76bc4613a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Data.Sqlite.Portable.1.0.3.5\lib\net4\System.Data.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Transactions.Portable, Version=4.0.0.0, Culture=neutral, PublicKeyToken=59e704a76bc4613a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Data.Sqlite.Portable.1.0.3.5\lib\net4\System.Transactions.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TweetSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
+      <HintPath>..\packages\TweetSharp.2.3.1\lib\4.0\TweetSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="commands\Corrade\AddConfigurationGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Bayes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Deactivate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ExportOAR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetAvatarClassifiedData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetAvatarClassifieds.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetAvatarPicks.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetAvatarPickData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetHeartbeatData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetRemoteParcelInfoData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\RemoveConfigurationGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\RemoveItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\RenameItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetInventoryData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Shoot.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\DetachAll.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Heartbeat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Login.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Store.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Teleport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Preload.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Attributes.cs" />
+    <Compile Include="Source\Command.cs" />
+    <Compile Include="Source\CommandLineOptions.cs" />
+    <Compile Include="Source\Constants\CORRADE_CONSTANTS.cs" />
+    <Compile Include="Source\Constants\SIML_BOT_CONSTANTS.cs" />
+    <Compile Include="Source\Enumerations.cs" />
+    <Compile Include="Source\Events\FeedEventArgs.cs" />
+    <Compile Include="Source\Events\GroupMembershipEventArgs.cs" />
+    <Compile Include="Source\Events\GroupMessageEventArgs.cs" />
+    <Compile Include="Source\Events\HeartbeatEventArgs.cs" />
+    <Compile Include="Source\Events\OutfitEventArgs.cs" />
+    <Compile Include="Source\Events\TypingEventArgs.cs" />
+    <Compile Include="Source\Helpers\Utilities.cs" />
+    <Compile Include="Source\Notification.cs" />
+    <Compile Include="Source\RLV.cs" />
+    <Compile Include="Source\Structures\SerializedNotification.cs" />
+    <Compile Include="Source\Structures\Agent.cs" />
+    <Compile Include="Source\Structures\AgentMovement.cs" />
+    <Compile Include="Source\Structures\Effects\BeamEffect.cs" />
+    <Compile Include="Source\Structures\CallbackQueueElement.cs" />
+    <Compile Include="Source\Structures\Conference.cs" />
+    <Compile Include="Source\Structures\DirItem.cs" />
+    <Compile Include="Source\Structures\GroupInvite.cs" />
+    <Compile Include="Source\Structures\GroupMessage.cs" />
+    <Compile Include="Source\Structures\GroupNotice.cs" />
+    <Compile Include="Source\Structures\Heartbeat.cs" />
+    <Compile Include="Source\Structures\InstantMessage.cs" />
+    <Compile Include="Source\Structures\InventoryOffer.cs" />
+    <Compile Include="Source\Structures\LocalMessage.cs" />
+    <Compile Include="Source\Structures\Effects\LookAtEffect.cs" />
+    <Compile Include="Source\Structures\Effects\PointAtEffect.cs" />
+    <Compile Include="Source\Structures\RegionMessage.cs" />
+    <Compile Include="Source\Structures\ScriptDialog.cs" />
+    <Compile Include="Source\Structures\ScriptPermissionRequest.cs" />
+    <Compile Include="Source\Structures\Effects\SphereEffect.cs" />
+    <Compile Include="Source\Structures\SoftBan.cs" />
+    <Compile Include="Source\Structures\TeleportLure.cs" />
+    <Compile Include="Source\Threading\Enumerations.cs" />
+    <Compile Include="Source\Threading\Thread.cs" />
+    <Compile Include="Source\WebForms\SecondLife\EventFormData.cs" />
+    <Compile Include="Source\WebForms\SecondLife\Transaction.cs" />
+    <Compile Include="Source\WebForms\SecondLife\Transactions.cs" />
+    <Compile Include="commands\Corrade\AddEvent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Conference.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\DeleteEvent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetAvatarGroupsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetConferenceMemberData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetConferenceMembersData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetGridLiveDataFeedData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ImportXML.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ReadFile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetEstateCovenant.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetAccountTransactionsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Activate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\AddClassified.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\AddPick.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\AddToRole.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\AI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Animation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\At.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Attach.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\AutoPilot.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Away.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Ban.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\BatchEject.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\BatchInvite.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\BatchMute.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Busy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Cache.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ChangeAppearance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ChangePrimitiveLink.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Configuration.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\CreateGrass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\CreateGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\CreateNotecard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\CreatePrimitive.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\CreateRole.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\CreateTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Crouch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Database.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\DeleteClassified.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\DeleteFromRole.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\TrashItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\DeletePick.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\DeleteRole.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\DeleteViewerEffect.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Derez.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Detach.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\DirectorySearch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\DisplayName.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Download.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Eject.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\EmptyTrash.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\EstateTeleportUsersHome.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Execute.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ExportDAE.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ExportXML.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Facebook.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Feed.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Filter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Fly.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\FlyTo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetAnimations.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetAttachments.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetAvatarData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetAvatarGroupData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetAvatarPositions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetAvatarsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetBalance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetCameraData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetConfigurationData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetConnectedRegions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetCurrentGroups.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetCurrentGroupsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetEstateCovenant.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetEstateList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetEventFormData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetFriendData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetFriendshipRequests.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetFriendsList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetGridRegionData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetGroupAccountSummaryData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetGroupData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetGroupInvites.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetGroupMemberData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetGroupMembersData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetGroupsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetInventoryData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetInventoryOffers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetInventoryPath.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetMapAvatarPositions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetMemberRoles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetMembers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetMovementData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetMutes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetNetworkData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetObjectData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetObjectMediaData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetObjectPermissions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetObjectsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetParcelData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetParcelInfoData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetParcelList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetParticleSystem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetPrimitiveBodyTypes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetPrimitiveData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetPrimitiveFlexibleData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetPrimitiveInventory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetPrimitiveInventoryData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetPrimitiveLightData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetPrimitiveOwners.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetPrimitivePayPrices.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetPrimitivePhysicsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetPrimitivePropertiesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetPrimitiveSculptData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetPrimitivesData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetPrimitiveShapeData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetPrimitiveTextureData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetProfileData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetRegionData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetRegionParcelsBoundingBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetRegionTerrainHeights.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetRegionTerrainTextures.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetRegionTop.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetRoleMembers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetRolePowers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetRoles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetRolesMembers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetScriptDialogs.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetScriptPermissionRequests.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetScriptRunning.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetSelfData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetStatus.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetTeleportLures.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetTerrainHeight.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetTitles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetViewerEffects.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GetWearables.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Give.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GoHome.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Grab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\GrantFriendRights.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Inventory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Invite.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Join.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Jump.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Language.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Leave.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ListCommands.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Logout.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Logs.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Lure.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\MapFriend.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Marry.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Moderate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ModifyEvent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Mute.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Notice.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Notify.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Nudge.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ObjectDeed.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\OfferFriendship.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ParcelBuy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ParcelDeed.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ParcelEject.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ParcelFreeze.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ParcelReclaim.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ParcelRelease.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Pay.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Ping.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\PlayGesture.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\PlaySound.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\PrimitiveBuy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Rebake.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Relax.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ReplyToFriendshipRequest.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ReplyToGroupInvite.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ReplyToInventoryOffer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ReplyToScriptDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ReplyToScriptPermissionRequest.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ReplyToTeleportLure.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\RestartRegion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\ReturnPrimitives.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Rez.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\RLV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Run.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SearchInventory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetCameraData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetConfigurationData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetEstateList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetGroupData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetHome.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetMovementData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetObjectGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetObjectMediaData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetObjectPermissions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetObjectPosition.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetObjectRotation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetObjectSaleInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetObjectScale.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetParcelData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetParcelList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetPrimitiveDescription.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetPrimitiveFlags.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetPrimitiveFlexibleData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetPrimitiveLightData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetPrimitiveMaterial.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetPrimitiveName.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetPrimitivePosition.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetPrimitiveRotation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetPrimitiveScale.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetPrimitiveSculptData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetPrimitiveShapeData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetPrimitiveTextureData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetProfileData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetRegionDebug.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetRegionInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetRegionTerrainTextures.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetRegionTerrainHeights.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetRegionTerrainVariables.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetRolePowers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetScriptRunning.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SetViewerEffect.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Sit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\SoftBan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Stand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\StartProposal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Tag.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Teleport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Tell.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\TerminateFriendship.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Terraform.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Terrain.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Touch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Turn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\TurnTo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Twitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Typing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Unwear.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\UpdatePrimitiveInventory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Upload.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Version.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Wear.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\Divorce.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\Corrade\WriteFile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\Attach.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\AttachOver.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\AttachOverOrReplace.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\Clear.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\Detach.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\DetachMe.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\FindFolder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\GetAttach.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\GetGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\GetInv.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\GetInvWorn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\GetOutfit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\GetPath.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\GetPathNew.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\GetSitId.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\GetStatus.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\GetStatusAll.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\RemAttach.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\RemOutfit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\SetGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\SetRot.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\Sit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\TpTo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\Unsit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\Version.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\VersionNew.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="commands\RLV\VersionNum.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Corrade.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Corrade.Designer.cs">
+      <DependentUpon>Corrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Helpers\Notifications.cs" />
+    <Compile Include="notifications\Alert.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Animation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Avatars.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Balance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Collision.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Conference.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Control.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Crossing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Debug.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Dialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Economy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Effect.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Feed.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Friendship.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Group.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Inventory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Invite.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Local.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Lure.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Membership.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Message.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Notice.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\ObjectIM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Outfit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\OwnerSay.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Permission.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Primitives.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Region.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\RegionSayTo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\RLV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Sit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Sound.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Terse.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\Typing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="notifications\URL.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="..\Configurator\bin\Release\Configurator.exe.config">
+      <Link>Configurator.exe.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Configurator\bin\Release\Configurator.exe.manifest">
+      <Link>Configurator.exe.manifest</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\libopenjpeg-dotnet-2-1.5.0-dotnet-1-arm.so">
+      <Link>libs\libopenjpeg-dotnet-2-1.5.0-dotnet-1-arm.so</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\libopenjpeg-dotnet-2-1.5.0-dotnet-1-freebsd.so">
+      <Link>libs\libopenjpeg-dotnet-2-1.5.0-dotnet-1-freebsd.so</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\libopenjpeg-dotnet-2-1.5.0-dotnet-1-i686.so">
+      <Link>libs\libopenjpeg-dotnet-2-1.5.0-dotnet-1-i686.so</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\libopenjpeg-dotnet-2-1.5.0-dotnet-1-x86_64-freebsd.so">
+      <Link>libs\libopenjpeg-dotnet-2-1.5.0-dotnet-1-x86_64-freebsd.so</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\libopenjpeg-dotnet-2-1.5.0-dotnet-1-x86_64.so">
+      <Link>libs\libopenjpeg-dotnet-2-1.5.0-dotnet-1-x86_64.so</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\libopenjpeg-dotnet-2-1.5.0-dotnet-1.dylib">
+      <Link>libs\libopenjpeg-dotnet-2-1.5.0-dotnet-1.dylib</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\OpenMetaverse.dll.config">
+      <Link>libs\OpenMetaverse.dll.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade.simlpk">
+      <Link>SIML\Corrade.simlpk</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade.simlproj">
+      <Link>SIML\Corrade.simlproj</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\AI.siml">
+      <Link>SIML\Corrade\AI.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Astrology.siml">
+      <Link>SIML\Corrade\Astrology.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Atomic.siml">
+      <Link>SIML\Corrade\Atomic.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Badanswer.siml">
+      <Link>SIML\Corrade\Badanswer.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Biography.siml">
+      <Link>SIML\Corrade\Biography.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Blackjack.siml">
+      <Link>SIML\Corrade\Blackjack.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Bot.siml">
+      <Link>SIML\Corrade\Bot.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Botmaster.siml">
+      <Link>SIML\Corrade\Botmaster.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Client.siml">
+      <Link>SIML\Corrade\Client.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Common.siml">
+      <Link>SIML\Corrade\Common.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Computers.siml">
+      <Link>SIML\Corrade\Computers.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Date.siml">
+      <Link>SIML\Corrade\Date.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Default.siml">
+      <Link>SIML\Corrade\Default.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Dialog.siml">
+      <Link>SIML\Corrade\Dialog.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Drugs.siml">
+      <Link>SIML\Corrade\Drugs.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Emotion.siml">
+      <Link>SIML\Corrade\Emotion.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Food.siml">
+      <Link>SIML\Corrade\Food.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\General Public Query.siml">
+      <Link>SIML\Corrade\General Public Query.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Geography.siml">
+      <Link>SIML\Corrade\Geography.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Gossip.siml">
+      <Link>SIML\Corrade\Gossip.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Happy.siml">
+      <Link>SIML\Corrade\Happy.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\History.siml">
+      <Link>SIML\Corrade\History.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Human.siml">
+      <Link>SIML\Corrade\Human.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Humor.siml">
+      <Link>SIML\Corrade\Humor.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Inquiry.siml">
+      <Link>SIML\Corrade\Inquiry.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Integer.siml">
+      <Link>SIML\Corrade\Integer.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Interjection.siml">
+      <Link>SIML\Corrade\Interjection.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\IU.siml">
+      <Link>SIML\Corrade\IU.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Knowledge.siml">
+      <Link>SIML\Corrade\Knowledge.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Literature.siml">
+      <Link>SIML\Corrade\Literature.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Luckyslots.siml">
+      <Link>SIML\Corrade\Luckyslots.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Math.siml">
+      <Link>SIML\Corrade\Math.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\MathFacts.siml">
+      <Link>SIML\Corrade\MathFacts.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Money.siml">
+      <Link>SIML\Corrade\Money.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Movies.siml">
+      <Link>SIML\Corrade\Movies.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Multiple.siml">
+      <Link>SIML\Corrade\Multiple.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Music.siml">
+      <Link>SIML\Corrade\Music.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Parts.siml">
+      <Link>SIML\Corrade\Parts.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Personality.siml">
+      <Link>SIML\Corrade\Personality.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Philosophy.siml">
+      <Link>SIML\Corrade\Philosophy.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Pickup.siml">
+      <Link>SIML\Corrade\Pickup.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Politics.siml">
+      <Link>SIML\Corrade\Politics.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Predicates.siml">
+      <Link>SIML\Corrade\Predicates.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Previous.siml">
+      <Link>SIML\Corrade\Previous.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Psychology.siml">
+      <Link>SIML\Corrade\Psychology.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Reduce.siml">
+      <Link>SIML\Corrade\Reduce.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Reducer.siml">
+      <Link>SIML\Corrade\Reducer.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Reductions.siml">
+      <Link>SIML\Corrade\Reductions.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Religion.siml">
+      <Link>SIML\Corrade\Religion.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Salutations.siml">
+      <Link>SIML\Corrade\Salutations.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Science.siml">
+      <Link>SIML\Corrade\Science.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Settings\Bot-Settings.siml">
+      <Link>SIML\Corrade\Settings\Bot-Settings.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Settings\EmotionML.siml">
+      <Link>SIML\Corrade\Settings\EmotionML.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Settings\Maps.siml">
+      <Link>SIML\Corrade\Settings\Maps.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Settings\Normalizations.siml">
+      <Link>SIML\Corrade\Settings\Normalizations.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Settings\Pattern Reductions.siml">
+      <Link>SIML\Corrade\Settings\Pattern Reductions.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Settings\Random Responses.siml">
+      <Link>SIML\Corrade\Settings\Random Responses.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Settings\Regular Expressions.siml">
+      <Link>SIML\Corrade\Settings\Regular Expressions.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Settings\Repetition.siml">
+      <Link>SIML\Corrade\Settings\Repetition.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Settings\Scripts.siml">
+      <Link>SIML\Corrade\Settings\Scripts.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Settings\Sets.siml">
+      <Link>SIML\Corrade\Settings\Sets.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Settings\User-Settings.siml">
+      <Link>SIML\Corrade\Settings\User-Settings.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Sex.siml">
+      <Link>SIML\Corrade\Sex.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Spam.siml">
+      <Link>SIML\Corrade\Spam.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Sports.siml">
+      <Link>SIML\Corrade\Sports.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Stack.siml">
+      <Link>SIML\Corrade\Stack.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Stories.siml">
+      <Link>SIML\Corrade\Stories.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SIML\Corrade\Websites.siml">
+      <Link>SIML\Corrade\Websites.siml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\sqlite\libsqlite3-arm.so">
+      <Link>libs\libsqlite3-arm.so</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\sqlite\libsqlite3-freebsd.so">
+      <Link>libs\libsqlite3-freebsd.so</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\sqlite\libsqlite3-x86_64-freebsd.so">
+      <Link>libs\libsqlite3-x86_64-freebsd.so</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\sqlite\libsqlite3-x86_64.so">
+      <Link>libs\libsqlite3-x86_64.so</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\sqlite\libsqlite3.dylib">
+      <Link>libs\libsqlite3.dylib</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\sqlite\libsqlite3.so">
+      <Link>libs\libsqlite3.so</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\sqlite\Mono.Data.Sqlite.dll.config">
+      <Link>libs\Mono.Data.Sqlite.dll.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="app.config" />
+    <None Include="Corrade.ini.default">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\sqlite\sqlite3-x86_64.dll">
+      <Link>libs\sqlite3-x86_64.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\sqlite\sqlite3.dll">
+      <Link>libs\sqlite3.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\alert.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\animation.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\avatars.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\balance.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\collision.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\conference.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\control.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\crossing.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\debug.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\dialog.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\economy.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\effect.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\feed.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\friendship.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\group.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\heartbeat.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\inventory.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\invite.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\local.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\login.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\store.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\teleport.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\lure.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\membership.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\message.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\notice.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\objectim.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\outfit.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\ownersay.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\permission.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\preload.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\primitives.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\region.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\regionsayto.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\rlv.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\sit.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\sound.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\terse.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\typing.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\notifications\url.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="..\Configurator\bin\Release\Configurator.exe">
+      <Link>Configurator.exe</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="..\libopenmetaverse\bin\log4net.dll">
+      <Link>libs\log4net.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\libopenmetaverse\bin\openmetaverse_data\avatar_skeleton.xml">
+      <Link>openmetaverse_data\avatar_skeleton.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="..\libopenmetaverse\bin\openjpeg-dotnet-x86_64.dll">
+      <Link>libs\openjpeg-dotnet-x86_64.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openjpeg-dotnet.dll">
+      <Link>libs\openjpeg-dotnet.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\blush_alpha.tga">
+      <Link>openmetaverse_data\blush_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\bodyfreckles_alpha.tga">
+      <Link>openmetaverse_data\bodyfreckles_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\body_skingrain.tga">
+      <Link>openmetaverse_data\body_skingrain.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\bump_face_wrinkles.tga">
+      <Link>openmetaverse_data\bump_face_wrinkles.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\bump_head_base.tga">
+      <Link>openmetaverse_data\bump_head_base.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\bump_lowerbody_base.tga">
+      <Link>openmetaverse_data\bump_lowerbody_base.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\bump_pants_wrinkles.tga">
+      <Link>openmetaverse_data\bump_pants_wrinkles.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\bump_shirt_wrinkles.tga">
+      <Link>openmetaverse_data\bump_shirt_wrinkles.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\bump_upperbody_base.tga">
+      <Link>openmetaverse_data\bump_upperbody_base.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\eyebrows_alpha.tga">
+      <Link>openmetaverse_data\eyebrows_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\eyeliner_alpha.tga">
+      <Link>openmetaverse_data\eyeliner_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\eyeshadow_inner_alpha.tga">
+      <Link>openmetaverse_data\eyeshadow_inner_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\eyeshadow_outer_alpha.tga">
+      <Link>openmetaverse_data\eyeshadow_outer_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\eyewhite.tga">
+      <Link>openmetaverse_data\eyewhite.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\facehair_chincurtains_alpha.tga">
+      <Link>openmetaverse_data\facehair_chincurtains_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\facehair_moustache_alpha.tga">
+      <Link>openmetaverse_data\facehair_moustache_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\facehair_sideburns_alpha.tga">
+      <Link>openmetaverse_data\facehair_sideburns_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\facehair_soulpatch_alpha.tga">
+      <Link>openmetaverse_data\facehair_soulpatch_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\freckles_alpha.tga">
+      <Link>openmetaverse_data\freckles_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\gloves_fingers_alpha.tga">
+      <Link>openmetaverse_data\gloves_fingers_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\glove_length_alpha.tga">
+      <Link>openmetaverse_data\glove_length_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\head_alpha.tga">
+      <Link>openmetaverse_data\head_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\head_color.tga">
+      <Link>openmetaverse_data\head_color.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\head_hair.tga">
+      <Link>openmetaverse_data\head_hair.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\head_highlights_alpha.tga">
+      <Link>openmetaverse_data\head_highlights_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\head_shading_alpha.tga">
+      <Link>openmetaverse_data\head_shading_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\head_skingrain.tga">
+      <Link>openmetaverse_data\head_skingrain.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\jacket_length_lower_alpha.tga">
+      <Link>openmetaverse_data\jacket_length_lower_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\jacket_length_upper_alpha.tga">
+      <Link>openmetaverse_data\jacket_length_upper_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\jacket_open_lower_alpha.tga">
+      <Link>openmetaverse_data\jacket_open_lower_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\jacket_open_upper_alpha.tga">
+      <Link>openmetaverse_data\jacket_open_upper_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\lipgloss_alpha.tga">
+      <Link>openmetaverse_data\lipgloss_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\lipstick_alpha.tga">
+      <Link>openmetaverse_data\lipstick_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\lips_mask.tga">
+      <Link>openmetaverse_data\lips_mask.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\lowerbody_color.tga">
+      <Link>openmetaverse_data\lowerbody_color.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\lowerbody_highlights_alpha.tga">
+      <Link>openmetaverse_data\lowerbody_highlights_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\lowerbody_shading_alpha.tga">
+      <Link>openmetaverse_data\lowerbody_shading_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\nailpolish_alpha.tga">
+      <Link>openmetaverse_data\nailpolish_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\pants_length_alpha.tga">
+      <Link>openmetaverse_data\pants_length_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\pants_waist_alpha.tga">
+      <Link>openmetaverse_data\pants_waist_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\rosyface_alpha.tga">
+      <Link>openmetaverse_data\rosyface_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\rouge_alpha.tga">
+      <Link>openmetaverse_data\rouge_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\shirt_bottom_alpha.tga">
+      <Link>openmetaverse_data\shirt_bottom_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\shirt_collar_alpha.tga">
+      <Link>openmetaverse_data\shirt_collar_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\shirt_collar_back_alpha.tga">
+      <Link>openmetaverse_data\shirt_collar_back_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\shirt_sleeve_alpha.tga">
+      <Link>openmetaverse_data\shirt_sleeve_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\shoe_height_alpha.tga">
+      <Link>openmetaverse_data\shoe_height_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\skirt_length_alpha.tga">
+      <Link>openmetaverse_data\skirt_length_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\skirt_slit_back_alpha.tga">
+      <Link>openmetaverse_data\skirt_slit_back_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\skirt_slit_front_alpha.tga">
+      <Link>openmetaverse_data\skirt_slit_front_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\skirt_slit_left_alpha.tga">
+      <Link>openmetaverse_data\skirt_slit_left_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\skirt_slit_right_alpha.tga">
+      <Link>openmetaverse_data\skirt_slit_right_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\underpants_trial_female.tga">
+      <Link>openmetaverse_data\underpants_trial_female.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\underpants_trial_male.tga">
+      <Link>openmetaverse_data\underpants_trial_male.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\undershirt_trial_female.tga">
+      <Link>openmetaverse_data\undershirt_trial_female.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\upperbodyfreckles_alpha.tga">
+      <Link>openmetaverse_data\upperbodyfreckles_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\upperbody_color.tga">
+      <Link>openmetaverse_data\upperbody_color.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\upperbody_highlights_alpha.tga">
+      <Link>openmetaverse_data\upperbody_highlights_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\upperbody_shading_alpha.tga">
+      <Link>openmetaverse_data\upperbody_shading_alpha.tga</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\libopenmetaverse\bin\openmetaverse_data\avatar_lad.xml">
+      <Link>openmetaverse_data\avatar_lad.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Corrade.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="Corrade.exe.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="..\libopenmetaverse\bin\XMLRPC.dll">
+      <Link>libs\XMLRPC.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\libopenmetaverse\bin\zlib.net.dll">
+      <Link>libs\zlib.net.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Corrade.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Bayes\" />
+    <Folder Include="cache\assets\" />
+    <Folder Include="databases\" />
+    <Folder Include="logs\conference\" />
+    <Folder Include="logs\groupchat\" />
+    <Folder Include="logs\im\" />
+    <Folder Include="logs\local\" />
+    <Folder Include="SIML\Corrade\Templates\" />
+    <Folder Include="SIML\Evolve\" />
+    <Folder Include="state\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\corrade-configuration-sharp\CorradeConfigurationSharp\CorradeConfigurationSharp.csproj">
+      <Project>{2ca04070-f3e8-4e39-9f43-4bb7090d7a77}</Project>
+      <Name>CorradeConfigurationSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\wasOpenMetaverse\wasOpenMetaverse.csproj">
+      <Project>{b9537c43-94dc-4bd4-b6fb-b7ca77c11824}</Project>
+      <Name>wasOpenMetaverse</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\wasSharpNET\wasSharpNET.csproj">
+      <Project>{ef59aac3-9861-4e63-a513-e39127376f24}</Project>
+      <Name>wasSharpNET</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\wasSharp\wasSharp.csproj">
+      <Project>{a971e1c9-776c-4cd2-88ac-71197c7b955e}</Project>
+      <Name>wasSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Mono.Data.Sqlite.Portable.1.0.3.5\tools\Mono.Data.Sqlite.Portable.targets" Condition="Exists('..\packages\Mono.Data.Sqlite.Portable.1.0.3.5\tools\Mono.Data.Sqlite.Portable.targets')" />
+  <Target Name="EnsureMonoDataSqlitePortableImported" BeforeTargets="BeforeBuild" Condition="'$(MonoDataSqlitePortableImported)' == ''">
+    <Error Condition="!Exists('..\packages\Mono.Data.Sqlite.Portable.1.0.3.5\tools\Mono.Data.Sqlite.Portable.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them." />
+    <Error Condition="Exists('..\packages\Mono.Data.Sqlite.Portable.1.0.3.5\tools\Mono.Data.Sqlite.Portable.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build." />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
